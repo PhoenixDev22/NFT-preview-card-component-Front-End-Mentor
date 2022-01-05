@@ -1,0 +1,173 @@
+*, 
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* primary */
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    /* neutral */
+    --Very-dark-blue : hsl(217, 54%, 11%);
+    --Very-dark-blue-card: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+a{
+    text-decoration: none;
+    color: var(--White);
+    transition: color .3s ease;
+}
+a:hover{
+    cursor: pointer;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+body{
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--Very-dark-blue);
+    min-height: 100vh;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh
+}
+main .card{
+    max-width: 350px;
+    height: fit-content;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px;
+    position: relative;
+    background-color: var(--Very-dark-blue-card);
+    position: relative;
+}
+/* styling the image and the overlay */
+main .image{
+    position: relative;  
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+.card .image>img{
+    border-radius: 10px;
+}
+.card .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsl(178deg 100% 50% / 60%);
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity .3s;
+}
+.card .overlay img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: opacity .3s;
+}
+.overlay:hover,
+.overlay:hover img{
+    opacity: 1;
+}
+/* end styling the image and the overlay */
+/* start styling the card body */
+.card h1 {
+    margin: 23px 0 15px;
+}
+.card h1 a {
+    display: block;
+    font-size: 23px;
+    color: var(--White);
+    font-weight: 600;
+    transition: color .3s;
+}
+.card h1 a:hover{
+    color: var(--Cyan);
+}
+.card p{
+    font-size: 18px;
+    color: var(--Soft-blue);
+    font-weight: 400;
+}
+.card .info{
+    margin: 23px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.card .info>div {
+    display: flex;
+    align-items: center;
+}
+.card .price span{
+    margin-left: 7px;
+    color: var(--Cyan);
+}
+.card .time-left span{
+    margin-left: 7px;
+    color: var(--Soft-blue);
+}
+/* end styling the card body */
+/* start styling the creator part */
+.card .creator{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-top: 1px solid var(--Very-dark-blue-line);
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+.card .creator img{
+    max-width: 35px;
+    max-height: 35px;
+    border: 2px solid var(--White);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.card .creator h2,
+.card .creator a{
+    font-size: 16px;
+    font-weight: 400;
+}
+.card .creator a:hover{
+    color: var(--Cyan);
+}
+.card .creator h2 span{
+    color: var(--Soft-blue);
+}
+/* end styling the creator part */
+/* start styling the attriution */
+.attribution { 
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px; 
+    line-height: 1.6;
+    text-align: center; 
+    color: hsl(0deg 0% 100% / 64%);
+}
+.attribution a { 
+    color: var(--Soft-blue);
+}
+.attribution a:hover{
+    color: var(--Cyan);
+    transition: color .3s;
+}
+/* end styling the attribution */
