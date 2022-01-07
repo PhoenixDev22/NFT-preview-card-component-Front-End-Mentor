@@ -153,11 +153,8 @@ main .image{
 }
 /* end styling the creator part */
 /* start styling the attriution */
-.attribution { 
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
+.attribution {
+    margin-top: 30px;
     font-size: 14px; 
     line-height: 1.6;
     text-align: center; 
