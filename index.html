@@ -11,33 +11,31 @@
 </head>
 <body>
   <main>
+    <h1 class="sr-only">Frontend Mentor | NFT preview card component</h1>
     <!-- card  -->
     <div class="card">
-      <div class="image">
-        <img src="images/image-equilibrium.jpg" alt="equilibrium">
-        <div class="overlay">
-          <img src="images/icon-view.svg" alt="">
-        </div>
-      </div>
+      <a class="image">
+          <img src="images/image-equilibrium.jpg" alt="equilibrium">
+      </a>
       <!-- card body -->
-      <h1><a href="#" class="anchor">Equilibrium #3429</a></h1>
+      <h2 class="title"><a href="#" class="anchor">Equilibrium #3429</a></h2>
       <p class="description">Our Equilibrium collection promotes balance and calm.</p>
 
       <div class="info"> 
         <div class="price">
-          <img src="images/icon-ethereum.svg" alt="">
-          <span>0.041 ETH</span>
+          <img src="images/icon-ethereum.svg" width="11" height="18" alt="" aria-hidden="true">
+          <p>0.041 ETH</p>
         </div>
         <div class="time-left">
-          <img src="images/icon-clock.svg" alt="">
-          <span>3 days left</span>
+          <img src="images/icon-clock.svg" width="17" height="17" alt="" aria-hidden="true">
+          <p>3 days left</p>
         </div>
       </div>
       <!-- creator  -->
-      <div class="creator">
+      <figure class="creator">
         <img src="images/image-avatar.png" alt="Jules Wyvern">
-        <h2><span> Creation of </span><a href="#" class="anchor">Jules Wyvern</a></h2>
-      </div>
+        <figcaption><p> Creation of </p><a href="#" class="creator__anchor">Jules Wyvern</a></figcaption>
+      </figure>
     </div>
   </main>
   <footer class="attribution">
