@@ -6,22 +6,22 @@
     box-sizing: border-box;
 }
 :root{
-    /* primary */
+    /* primary colors */
     --Soft-blue: hsl(215, 51%, 70%);
     --Cyan: hsl(178, 100%, 50%);
-    /* neutral */
+    /* neutral colors */
     --Very-dark-blue : hsl(217, 54%, 11%);
     --Very-dark-blue-card: hsl(216, 50%, 16%);
     --Very-dark-blue-line: hsl(215, 32%, 27%);
     --White: hsl(0, 0%, 100%);
 }
+html{
+    font-size: 100%;
+}
 a{
     text-decoration: none;
     color: var(--White);
     transition: color .3s ease;
-}
-a:hover{
-    cursor: pointer;
 }
 img{
     max-width: 100%;
@@ -40,72 +40,82 @@ main{
     width: 100%;
     height: 100vh
 }
+/* Screen reader class to hide the content visually */
+.sr-only {
+    position: absolute !important;
+    margin: -1px !important;
+    -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
 main .card{
-    max-width: 350px;
+    max-width:21.875rem;
     height: fit-content;
     border-radius: 15px;
-    padding: 25px;
-    margin: 20px;
+    padding: 1.56rem;
     position: relative;
     background-color: var(--Very-dark-blue-card);
     position: relative;
+    margin: 1.25rem;
 }
-/* styling the image and the overlay */
+/* styling the image and the overlay*/
 main .image{
     position: relative;  
-    width: 300px;
-    height: 300px;
+    width: 18.75rem;
+    height: 18.75rem;
     overflow: hidden;
+    display: block;
 }
 .card .image>img{
     border-radius: 10px;
 }
-.card .overlay{
+.card .image::before{
+    content: url(images/icon-view.svg);
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: hsl(178deg 100% 50% / 60%);
-    width: 300px;
-    height: 300px;
+    width: 18.75rem;
+    height: 18.75rem;
     border-radius: 10px;
     opacity: 0;
     cursor: pointer;
     transition: opacity .3s;
 }
-.card .overlay img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    opacity: 0;
-    transition: opacity .3s;
-}
-.overlay:hover,
-.overlay:hover img{
+.card .image:hover::before{
     opacity: 1;
 }
 /* end styling the image and the overlay */
+
 /* start styling the card body */
-.card h1 {
-    margin: 23px 0 15px;
+.card .title {
+    margin: 1.4375rem 0 0.9375rem;
 }
-.card h1 a {
+.card .title a {
     display: block;
-    font-size: 23px;
+    font-size: 1.4375rem;
     color: var(--White);
     font-weight: 600;
     transition: color .3s;
 }
-.card h1 a:hover{
+.card .title a:hover{
     color: var(--Cyan);
 }
 .card p{
-    font-size: 18px;
+    font-size: 1.125rem;
     color: var(--Soft-blue);
     font-weight: 400;
 }
 .card .info{
-    margin: 23px 0;
+    margin: 1.4375rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -115,50 +125,55 @@ main .image{
     display: flex;
     align-items: center;
 }
-.card .price span{
+.card .price p{
     margin-left: 7px;
     color: var(--Cyan);
 }
-.card .time-left span{
+.card .time-left p{
     margin-left: 7px;
     color: var(--Soft-blue);
 }
-/* end styling the card body */
-/* start styling the creator part */
+/* End styling the card body */
+/* Start styling the creator part */
 .card .creator{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     border-top: 1px solid var(--Very-dark-blue-line);
-    padding-top: 20px;
+    padding-top: 1.25rem;
     margin-bottom: 10px;
 }
 .card .creator img{
-    max-width: 35px;
-    max-height: 35px;
-    border: 2px solid var(--White);
+    max-width: 2.1875rem;/*2.1875*/
+    max-height: 2.1875rem;
+    border: 1px solid var(--White);
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 1rem;
 }
-.card .creator h2,
-.card .creator a{
-    font-size: 16px;
+.card .creator figcaption,
+.card .creator .creator__anchor{
+    font-size: 1rem;
     font-weight: 400;
 }
-.card .creator a:hover{
+.card .creator .creator__anchor:hover{
     color: var(--Cyan);
 }
-.card .creator h2 span{
+.card .creator figcaption p{
+    display: inline;
     color: var(--Soft-blue);
 }
-/* end styling the creator part */
-/* start styling the attriution */
-.attribution {
-    margin-top: 30px;
-    font-size: 14px; 
+/* End styling the creator part */
+/* Start styling the attriution */
+.attribution { 
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.875rem; 
     line-height: 1.6;
     text-align: center; 
     color: hsl(0deg 0% 100% / 64%);
+    width: 100%;
 }
 .attribution a { 
     color: var(--Soft-blue);
@@ -167,4 +182,12 @@ main .image{
     color: var(--Cyan);
     transition: color .3s;
 }
-/* end styling the attribution */
+/* End styling the attribution */
+@media screen and (max-width: 32rem){
+    body {
+        font-size: 0.94rem;
+    }
+    .attribution{
+        display: none;
+    }
+}
