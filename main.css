@@ -23,6 +23,9 @@ a{
     color: var(--White);
     transition: color .3s ease;
 }
+ul{
+    list-style-type: none;
+}
 img{
     max-width: 100%;
     max-height: 100%;
@@ -121,7 +124,7 @@ main .image{
     justify-content: space-between;
     font-size: 15px;
 }
-.card .info>div {
+.card .info> li {
     display: flex;
     align-items: center;
 }
@@ -155,13 +158,14 @@ main .image{
     font-size: 1rem;
     font-weight: 400;
 }
-.card .creator .creator__anchor:hover{
-    color: var(--Cyan);
-}
 .card .creator figcaption p{
     display: inline;
     color: var(--Soft-blue);
 }
+.card .creator .creator__anchor:hover{
+    color: var(--Cyan);
+}
+
 /* End styling the creator part */
 /* Start styling the attriution */
 .attribution { 
